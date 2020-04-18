@@ -1,0 +1,114 @@
+$mobileView: "only screen and (max-width : 400px)";
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom right, rgb(128, 128, 128), rgb(36, 36, 36));
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    ;
+
+    .calculator {
+        width: 300px;
+        height: 500px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: #444;
+        padding: 25px 10px;
+        border-radius: 10px;
+        box-shadow: 6px 6px 0px 4px #333;
+
+        @media #{$mobileView} {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+        }
+
+        .display {
+            border: none;
+            width: 90%;
+            height: 125px;
+            background: #fff;
+            color: #555;
+            box-shadow: 0px 0px 0px 0.5px #999;
+            border-radius: 5px 5px 0px 0px;
+            text-align: right;
+            font-size: 2rem;
+            padding: 0 5%;
+
+            @media #{$mobileView} {
+                height: calc(100vh - 125vw);
+                min-height: 25vw;
+            }
+        }
+
+        .panel {
+            width: 100%;
+            height: 100%;
+
+            .button {
+                display: block;
+                float: left;
+                width: 75px;
+                height: 75px;
+                background: #fff;
+                box-shadow: 0px 0px 0px 0.5px #999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.1rem;
+                color: #333;
+                cursor: pointer;
+                transition: .15;
+
+                &:hover {
+                    background: #eee;
+                }
+
+                @media #{$mobileView} {
+                    width: 25vw;
+                    height: 25vw;
+                }
+
+            }
+
+            .operator {
+                background: #eee;
+
+                &:hover {
+                    background: #ddd;
+                }
+            }
+
+            .equal {
+                height: 150px;
+                float: right;
+                position: relative;
+                background: #b8b1a4;
+                border-radius: 0px 0px 5px 0px;
+
+                &:hover {
+                    background: #a8a194;
+                }
+
+                @media #{$mobileView} {
+                    height: 50vw;
+                }
+
+            }
+
+            .zero {
+                width: 150px;
+                border-radius: 0px 0px 0px 5px;
+
+                @media #{$mobileView} {
+                    width: 50vw;
+                }
+            }
+        }
+    }
+}
